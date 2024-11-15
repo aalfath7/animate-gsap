@@ -76,7 +76,7 @@
 
     <section class="px-10 sm:px-36 py-36 space-y-5">
       <h1 class="font-bold text-5xl">Hi, There 👋</h1>
-      <p class="text-xl sm:text-2xl text-gray-100">
+      <p class="text-xl sm:text-2xl text-gray-100" id="hero">
         "Welcome to my personal website! I'm [Your Name], a software developer
         specializing in web and mobile app development with the latest
         technologies. Here, you'll find my projects, professional experience,
@@ -97,7 +97,7 @@
           </p>
           <button
             type="button"
-            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100 hover:translate-x-5 duration-100"
           >
             <span> Visit </span>
             <svg
@@ -125,7 +125,7 @@
           </p>
           <button
             type="button"
-            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100 hover:translate-x-5 duration-100"
           >
             <span> Visit </span>
             <svg
@@ -153,7 +153,7 @@
           </p>
           <button
             type="button"
-            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100 hover:translate-x-5 duration-100"
           >
             <span> Visit </span>
             <svg
@@ -218,5 +218,16 @@
 
     adjustAnimation();
     window.addEventListener("resize", adjustAnimation);
+
+    gsap.registerPlugin(SplitText);
+
+    var split = new SplitText("#hero", { type: "chars" });
+
+    gsap.from(split.chars, {
+      duration: 1,
+      y: 100,
+      autoAlpha: 0,
+      stagger: 0.05,
+    });
   </script>
 </html>
