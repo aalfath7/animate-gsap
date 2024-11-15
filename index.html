@@ -6,6 +6,217 @@
     <title>GSAP | Simple Animation</title>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Questrial";
+      }
+      body {
+        height: 3000px;
+        background-color: #242629;
+        color: #fffffe;
+      }
+      .card,
+      .card-2,
+      .card-3 {
+        color: #fffffe;
+        background-color: #16161a;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <nav
+      x-data="{isOpen : false}"
+      class="flex justify-between items-center px-36 py-5"
+    >
+      <a href="" class="text-3xl font-bold">Romate</a>
+      <button type="button" class="rounded-full border-2 border-gray-100 p-1">
+        <svg
+          x-show="isOpen"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-9"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+        <svg
+          x-show="!isOpen"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-9"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <section class="px-10 sm:px-36 py-36 space-y-5">
+      <h1 class="font-bold text-5xl">Hi, There 👋</h1>
+      <p class="text-xl sm:text-2xl text-gray-100">
+        "Welcome to my personal website! I'm [Your Name], a software developer
+        specializing in web and mobile app development with the latest
+        technologies. Here, you'll find my projects, professional experience,
+        and insights on technology and innovation. Let's embark on a tech
+        journey together!"
+      </p>
+    </section>
+
+    <section class="py-36 px-2 sm:px-36 space-y-5">
+      <h2 class="font-bold text-3xl">Projects</h2>
+      <div class="grid sm:grid-cols-3 gap-3">
+        <div class="animate card w-96 p-5 space-y-5 rounded-lg">
+          <h1 class="font-bold text-2xl">Interactive Portfolio</h1>
+          <p class="text-xl">
+            Showcase your web development skills with an interactive portfolio
+            that features your latest projects, complete with dynamic animations
+            and detailed case studies.
+          </p>
+          <button
+            type="button"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+          >
+            <span> Visit </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="animate card-2 w-96 p-5 space-y-5 rounded-lg">
+          <h1 class="font-bold text-2xl">Blogging Platform</h1>
+          <p class="text-xl">
+            Create a fully functional blogging platform where users can read,
+            write, and comment on articles, with a focus on clean design and
+            responsive user experience.
+          </p>
+          <button
+            type="button"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+          >
+            <span> Visit </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="animate card-3 w-96 p-5 space-y-5 rounded-lg">
+          <h1 class="font-bold text-2xl">Task Management App</h1>
+          <p class="text-xl">
+            Build a productivity-focused task management app to help users
+            organize and track their daily tasks with features like reminders,
+            categories, and progress tracking.
+          </p>
+          <button
+            type="button"
+            class="flex space-x-2 items-center border-2 rounded-full px-3 py-2 border-stone-100"
+          >
+            <span> Visit </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    function adjustAnimation() {
+      const isDesktop = window.innerWidth >= 768;
+
+      if (isDesktop) {
+        gsap.to(".card", {
+          x: 300,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".animate",
+            scrub: 1,
+          },
+        });
+        gsap.to(".card-2", {
+          x: 200,
+          y: 200,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".animate",
+            scrub: 1,
+          },
+        });
+        gsap.to(".card-3", {
+          x: 100,
+          y: -200,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".animate",
+            scrub: 1,
+          },
+        });
+      } else {
+        gsap.killTweensOf(".card");
+        gsap.killTweensOf(".card-2");
+        gsap.killTweensOf(".card-3");
+        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      }
+      ScrollTrigger.refresh();
+    }
+
+    adjustAnimation();
+    window.addEventListener("resize", adjustAnimation);
+  </script>
 </html>
